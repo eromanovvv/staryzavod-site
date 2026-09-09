@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="yandex-verification" content="e1508188adb733f1" />
+    <meta name="cmsmagazine" content="3758aee2f7e7a0f392d7cb9948c23785" /> 
+    <!--<link rel="icon" href="../../favicon.ico">-->
+    <meta name="yandex-verification" content="e1508188adb733f1" />
+
+      <title></title>
+      <link rel="stylesheet" href="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/css/reset.css">
+      <link rel="stylesheet" href="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/css/normalize.css">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <link href="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+      <link href="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/css/custom.css" rel="stylesheet">
+      <link href="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/css/upd-01.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/js/script.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]-->
+      <!--<script src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod../../assets/js/ie8-responsive-file-warning.js"></script>-->
+      <!--[endif]-->
+    <!--<script src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/modules/system/assets/js/framework.js"></script>
+<script src="/modules/system/assets/js/framework.extras.js"></script>
+<link href="/modules/system/assets/css/framework.extras.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ru"></script>
+    <script src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/js/map.js"></script>
+  </head>
+  <body>
+  
+  
+  <div class="send_form_wrapper" style="display:none">
+    <div class="inner_form_wrapper">
+        <div class="close_button rotate"></div>
+        <div id='form_submit'>
+            <form id="contacts" data-request="onTest" data-request-success="alert('Спасибо за Вашу заявку!')"
+                  data-request-error="alert('Что-то пошло не так, попробуйте еще раз')">
+                <input placeholder="Ваше имя" id="name" name="name"
+                       required
+                       oninvalid="this.setCustomValidity('Пожалуйста, представьтесь')"
+                        />
+                <input placeholder="Номер телефона" id="phone" name="phone"
+                       oninvalid="this.setCustomValidity('Пожалуйста, укажите ваш телефон')"
+                       required
+                        />
+                <input type="submit" class="btn btn-default btn-popup" value="Отправить"/>
+            </form>
+            <span>Наш менеджер перезвонит вам с 9 до 18, кроме выходных</span>
+        </div>
+    </div>
+</div>
+    <div class="container content" id="content">
+        <nav role="navigation" class="navbar navbar-default visible-xs">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://xn--80aagiml2blhk5h.xn--p1ai"><img src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/img/logo_small.png"/></a>
+                </div>
+                <!--<div class=" col-sm-22 col-md-24 menu hidden-sm hidden-md hidden-lg" id="phone-menu">-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!--<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai" >Главная</a></li>/-->
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/feature" >Особенность пивоварни</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/brand" >Продукция</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/tech" >Технология</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/map"  class="current" >Точки продажи</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/news" >Новости</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/contact" >Контакты</a></li>
+<!--<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/partner" >Партнерская программа </a></li>/-->                    </ul>
+                </div>
+                <!--</div>-->
+            </div>
+        </nav>
+        <div class="row">
+            
+            <div class="col-sm-6 col-md-6 col-lg-6 ">
+                <div class="row">  
+                   
+                    <div class=" col-sm-22 col-md-24 menu hidden-xs" id="desktop-menu">
+                        <a href="https://xn--80aagiml2blhk5h.xn--p1ai"><img src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/img/LogoSZ_1_SMYK_line.png" class="first" /></a>
+                        <ul>
+                            <!--<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai" >Главная</a></li>/-->
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/feature" >Особенность пивоварни</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/brand" >Продукция</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/tech" >Технология</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/map"  class="current" >Точки продажи</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/news" >Новости</a></li>
+<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/contact" >Контакты</a></li>
+<!--<li><a href="https://xn--80aagiml2blhk5h.xn--p1ai/partner" >Партнерская программа </a></li>/-->                        </ul>
+                    </div>
+                    
+                </div>
+            </div> 
+          
+            
+            <div class="col-sm-18  col-md-18 col-lg-16">
+                
+<div class="row  ">
+    <div class=" col-sm-24 col-md-24 frame-01 gallery">
+        <div class="title">Точки продажи</div>
+    </div>
+</div>
+<div class="row">
+
+    <div class=" col-sm-24 col-md-24 frame-01 map-wrapper">
+        <div id="map-canvas"></div>
+        <hr/>
+
+	    <div class="map">
+	    <div class="plane">Фирменные точки продаж</div>
+	    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="plane firms" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский, Лимонад, Шорли (безалкогольный напиток)" data-comments="Фирменная торговая точка в г. Рыбное"><a>Рязанская обл., г. Рыбное, ул. Большая, 8Б, время работы с 10:00 до 22:00, без обеда и выходных.</a></div>
+                                                                                                                                                                                                                            <div class="plane firms" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский, Лимонад, Шорли (безалкогольный напиток)" data-comments="Фирменная торговая точка Пивоварни &quot;Старый Завод&quot;."><a>Рязанская обл., Спасск-Рязанский, Рязанское шоссе, 1А, время работы с 10:00 до 20:00, без обеда и выходных.</a></div>
+                                                                                                                                                            <div class="plane firms" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments=""><a>Рязанская обл., Спасский р-н, с. Городковичи, 162 (рядом с заводом), время работы  с 10:00 до 20:00, без обеда и выходных.</a></div>
+                                                                                                    <img class="img-responsive" src="https://xn--80aagiml2blhk5h.xn--p1ai/themes/zavod/assets/img/629_9534_map.jpg"><br>
+                                                                                                            <div class="plane firms" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Фирменная торговая точка в ТЦ &quot;Солнечный&quot;"><a>Рязань, 12-й р-он, п. Борки, д 131 (ТЦ &quot;Солнечный&quot;, Лента), время работы с 10:00 до 22:00, без обеда и выходных.</a></div>
+                                                                                                                                                            <div class="plane firms" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Фирменная торговая точка в магазине &quot;Мясной гастроном&quot;"><a>Рязань, Муромское ш., 3 (в магазине &quot;Мясной гастроном&quot;), время работы с 9:00 до 20:00, без обеда и выходных.</a></div>
+                                                                                                                                                            <div class="plane firms" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Фирменный Бар &quot;Alter Brauch&quot;"><a>Рязань, ул, Почтовая, д. 54  (фирменный Бар &quot;Alter Brauch&quot;), время работы:  пн-сб  с 14:00 до 2:00;  вс  с 14:00 до 23:00</a></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+
+        <hr/>
+    </div>
+</div>
+<div class="spots-wrapper">
+            <div class="row">
+                        
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Millstream</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Сеть винных магазинов &quot;Millstream&quot;"><a>Московская обл., г. Бронницы, ул. Строительная, д. 2</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Сеть винных магазинов Millstream"><a>Московская обл., Голицино, Одинцовский городской округ, ул. Советская, д. 1Г</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Сеть винных магазинов Millstream"><a>Московская обл., Звенигород, Одинцовский городской округ, ул. Украинская, д. 6</a></div>
+                                </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Аллегри</div>
+                                    <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Рязань, ул. Соборная, 23</a></div>
+                                                        </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Алмаз парк</div>
+                                    <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Биатлонная трасса"><a>Рязанская обл, п. Варские</a></div>
+                                                        </div>
+
+            </div>
+    <hr/>
+                    <div class="row">
+                        
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Амакс</div>
+                                    <div class="plane ctrls" data-sorts="Пиво Alter Brauch - Dark Ale (Темный Эль), Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Пиво Alter Brauch - Milk Stout (Молочный Стаут)" data-comments="Гостиница АМАКС, ресторан ЕСЕНИН"><a>Рязань, Первомайский проспект, 54</a></div>
+                                                        </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Арагон</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Отель Кремлевский парк"><a>Рязань, ул. Кремлевский вал, 5</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Гостиница Арагон"><a>Рязань, ул. Кудрявцева, 25</a></div>
+                                </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">ВкусВилл</div>
+                                    <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, 2-й Войковский проезд, 2/11</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, 2-я улица Новосёлки, 2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, 3-й Митинский переулок, 3</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Авиамоторная улица, 14</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Алтуфьевское шоссе, 72</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Большая Семёновская улица, 20</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Большая Спасская улица, 8с1А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Большая Черкизовская улица, 5А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Братиславская улица, 16к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, бульвар Адмирала Ушакова, 11</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, бульвар Дмитрия Донского, 11</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, бульвар Дмитрия Донского, 2к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, бульвар Дмитрия Донского, 8к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, бульвар Яна Райниса, 2к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Вильнюсская улица, 5</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Вокзальная площадь, 2С1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Волгоградский проспект, 133к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Головинское шоссе, 5</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Гончарная улица, 38</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Грузинский переулок, 8с1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Долгоруковская улица, 39/6</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Жулебинский бульвар, 9</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Зеленоград, 3-й микрорайон, Яблоневая аллея, 2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Зеленоград, Железнодорожная улица</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Зеленоград, Заводская улица, 27с1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Зеленоград, Привокзальная площадь, с7</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Зелёный проспект, 24Г</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Измайловский бульвар, 38</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Изумрудная улица, 3Г</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Ключевая улица, 10к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Комсомольский проспект, 27с5</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Кронштадтский бульвар, 3с12</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Ленинградский проспект, 75к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Ленинский проспект, 123</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Ленинский проспект, 37А</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch - Festival (Фестивальное), Медовуха &quot;Спасская&quot;" data-comments=""><a>Москва, Ленинский проспект, 99</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Люблинская улица, 102А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Люблинская улица, 171</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Люсиновская улица, 36/50</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, микрорайон Град Московский, Радужная улица, 14к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Минская улица, 14к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Митинская улица, 36</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Михалковская улица, 4</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Мичуринский проспект, 22к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Мичуринский проспект, улица Олимпийская Деревня, 4к3</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Можайское шоссе</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Можайское шоссе, 28</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Молодогвардейская улица, 30К1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Московская улица, 20/21</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Московский проспект, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Новокосинская улица, 31</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Новокосинская улица, 35</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Новотушинский проезд, 10к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Осенний бульвар, 12к6</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Первомайская улица, 33</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Первомайская улица, 81</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Петровско-Разумовский проезд, 16с2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Петрозаводская улица, 24Ас1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, поселение Внуковское, поселок Внуково, коттеджный поселок Московский писатель, улица Некрасова</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, поселение Марушкинское, садовое товарищество Транспортник-1, улица Мира, 11</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, поселение Сосенское, деревня Сосенки, Берёзовая улица, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, поселок Толстопальцево, улица Ворошилова</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, поселок Толстопальцево, улица Маяковского, 14</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, проезд Дежнёва, 23Д</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Пролетарский проспект, 14/49к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Пролетарский проспект, 23А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, проспект Вернадского, 39</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, проспект Вернадского, 9/10</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, проспект Мира, 116</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Профсоюзная улица, 104</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Профсоюзная улица, 142к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Профсоюзная улица, 26/44</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Профсоюзная улица, 5/9</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Рублёвское шоссе, 62</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Рязанский проспект, 75с1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Саянская улица, 9А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Славянский бульвар, 5к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Снежная улица, 21/1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Совхозная улица, 41</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Соколово-Мещёрская улица, 25</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Сокольническая площадь, 4А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Солнцевский проспект, 26</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Строгинский бульвар, 30</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Троицк, Юбилейная улица, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Украинский бульвар, 6</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица 26 Бакинских Комиссаров, 8к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица 50 лет Октября, 10</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица 800-летия Москвы, 22к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Академика Виноградова, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Большая Якиманка, 56</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Гарибальди, 27к4</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Генерала Белобородова, 11</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Гримау, 12с1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Дружбы, 8</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Дубки, 2А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Дудинка, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Зои и Александра Космодемьянских, 35/1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Зои и Александра Космодемьянских, 4к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Куусинена, 4к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Маршала Бирюзова, 19</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Маршала Бирюзова, 32</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Маршала Василевского, 17</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Маршала Неделина, 11</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Маршала Тухачевского, 49</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Миклухо-Маклая, 36</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Народного Ополчения, 22к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Новинки, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Покрышкина, 7к1с1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Пришвина, 26</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Расковой, 12</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Руднёвка, 5</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Трофимова, 35/20</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Хачатуряна, 20</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Черняховского, 6</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Шолохова, 15А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, улица Яблочкова, 21</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Уральская улица, 1А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Уральская улица, 6к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Уссурийская улица, 9</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Чертановская улица, 1Вк1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Чонгарский бульвар, 8к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Широкая улица, 12</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Щербаковская улица, 35</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Элеваторная улица, 12к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Москва, Ярославское шоссе, 2к2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Королёв, Вокзальный проезд, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Королёв, проспект Королева, 20</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Королёв, проспект Космонавтов, 33к1</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Королёв, Станционная площадь, 4</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Красногорский район, Пятницкое шоссе, 7-й километр, вл2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Ленинский район, Видное, микрорайон Солнечный, 10</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Люберецкий район, поселок городского типа Томилино, Егорьевское шоссе, 1Б</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Мытищи, бульвар Ветеранов, с2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Мытищи, улица Селезнёва, 33</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Одинцовский район, поселок Трёхгорка, Трёхгорная улица, 4</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Реутов, Юбилейный проспект, 36</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Московская область, Щёлково, Талсинская улица, 2</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments=""><a>Рязань, Первомайский проспект, д. 62А</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments="Сеть магазинов здорового питания ВкусВилл"><a>Рязань, Театральная пл., 1</a></div>
+                                </div>
+
+            </div>
+    <hr/>
+                    <div class="row">
+                        
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Глобус</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Гипермаркет Глобус, отдел пива"><a>Москва, Новорижское ш., 22-й километр, вл1с1</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Гипермаркет Глобус, отдел пива"><a>Московская обл., г. Королёв, ул. Коммунальная, 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Гипермаркет Глобус, отдел пива"><a>Московская обл., г. Пушкино, Красноармейское шоссе, с104</a></div>
+                                                <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot;, Пиво Alter Brauch (в ассортименте)" data-comments="Гипермаркет Глобус, отдел разливного пива"><a>Рязанская обл., Рязанский р-н, с. Дятьково, 1</a></div>
+                                </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Дом Пива</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, Народный бульвар, 7А</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, Славянский проспект, д. 3</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, Солотча, пл. Монастырская, д. 14</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. Васильевская, 7</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. Зубковой, 25 к 1</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. Кальная, д. 5</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="&quot;Дом Пива&quot;, сеть магазинов разливного пива"><a>Рязань, ул. Княжье Поле, 23</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. МОГЭС, 13</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте)" data-comments="Дом пива, сеть магазинов разливного пива"><a>Рязань, ул. Новаторов, 2 корп. 5</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте)" data-comments="Дом пива, сеть магазинов разливного пива"><a>Рязань, ул. Новоселов, 40 А</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте)" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. Пирогова, 8</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте)" data-comments="Дом пива, сеть магазинов разливного пива"><a>Рязань, ул. Пушкина, 26</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. Рытикова, 2</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Дом Пива, сеть магазинов разливного пива"><a>Рязань, ул. Свободы, 4</a></div>
+                                </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">ИП Пронин</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Магазин Разливного Пива"><a>Рязанская обл., г. Рыбное, ул. Рябиновая, 1</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Медовуха &quot;Спасская&quot; (в ассортименте), Пиво Alter Brauch (в ассортименте)" data-comments="Магазин разливного пива"><a>Рязань, ул. Вокзальная, 20А</a></div>
+                                </div>
+
+            </div>
+    <hr/>
+                    <div class="row">
+                        
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Кредо</div>
+                                    <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте)" data-comments="Магазин Фермер (на повороте)"><a>Рязанская обл., Рязанский р-н, с. Алеканово</a></div>
+                                                        </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Окская жемчужина</div>
+                                    <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте)" data-comments="Аквапарк, Окская жемчужина"><a>Рязанская обл., Рязанский р-н, с. Поляны, ул. Революции, 118</a></div>
+                                                        </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Пивоварня &quot;Старый Завод&quot;</div>
+                                                                                                                                                                                            </div>
+
+            </div>
+    <hr/>
+                    <div class="row">
+                        
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Пифкофф</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Магазин Разливного Пива"><a>Рязанская обл., Рязанский р-н, с. Дятьково, ул. Грачи, 56к1</a></div>
+                                                                        <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Магазин Разливного Пива"><a>Рязань, ул. Вокзальная, 61</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Магазин Разливного Пива"><a>Рязань, ул. Зубковой, д. 18, к. 12</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво Alter Brauch (в ассортименте)" data-comments="Пифкофф, сеть магазинов разливного пива"><a>Рязань, ул. Новоселов, 30а</a></div>
+                                                <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль), Сидр яблочный Спасский" data-comments="Магазин Разливного Пива"><a>Рязань, ул. Семчинская, 1</a></div>
+                                </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Сова</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Пиво Alter Brauch (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="Парк Отель &quot;Сова&quot;"><a>Рязань, пр. Шабулина, 21</a></div>
+                                                        </div>
+
+                                
+        <div class=" col-sm-8 col-md-8 map">
+            <div class="plane">Ять</div>
+                                    <div class="plane ctrls" data-sorts="Пиво &quot;рЯзмарин&quot; (Пэйл Эль с розмарином), Медовуха &quot;Спасская&quot; (в ассортименте), Пиво &quot;GULYAKA&quot; (Пэйл Эль)" data-comments="-"><a>Рязань, ул. Николодворянская, д. 18</a></div>
+                                                        </div>
+
+            </div>
+    <hr/>
+            </div>
+<hr>
+<div class="navig">
+    <a href="https://xn--80aagiml2blhk5h.xn--p1ai/news" class=" btn-default hidden-xs  next">Перейти к новостям</a>
+    <a href="https://xn--80aagiml2blhk5h.xn--p1ai/news" class=" btn-default hidden-sm hidden-lg hidden-md  next">К новостям</a>
+</div>
+<script>
+
+    var spots = [
+                                        [55.417702, 38.288284],
+                                                                    [55.629534, 36.986024],
+                                                [55.729534, 36.853526],
+                                                            [54.629789, 39.737599],
+                                                                                [54.730475, 39.852137],
+                                                                                [54.629501, 39.720167],
+                                                                                [54.63372, 39.751002],
+                                                                    [54.626502, 39.736253],
+                                                            [55.817628, 37.496839],
+                                                                    [55.928017, 37.389921],
+                                                [55.847674, 37.349434],
+                                                [55.752404, 37.715776],
+                                                [55.890058, 37.587964],
+                                                [55.781691, 37.705059],
+                                                [55.775677, 37.64321],
+                                                [55.797215, 37.718884],
+                                                [55.659358, 37.75744],
+                                                [55.546083, 37.549184],
+                                                [55.566807, 37.576385],
+                                                [55.570166, 37.575693],
+                                                [55.567535, 37.573717],
+                                                [55.85105, 37.434514],
+                                                [55.603756, 37.523106],
+                                                [55.542385, 37.572746],
+                                                [55.705179, 37.771589],
+                                                [55.840351, 37.49179],
+                                                [55.740887, 37.650621],
+                                                [55.772386, 37.580885],
+                                                [55.778558, 37.600747],
+                                                [55.697513, 37.848484],
+                                                [55.996213, 37.216942],
+                                                [55.972751, 37.197008],
+                                                [55.969108, 37.197448],
+                                                [55.980583, 37.171864],
+                                                [55.751193, 37.789447],
+                                                [55.796395, 37.800712],
+                                                [55.869763, 37.679897],
+                                                [55.636458, 37.758868],
+                                                [55.726046, 37.581487],
+                                                [55.839724, 37.486293],
+                                                [55.804243, 37.513476],
+                                                [55.646899, 37.479699],
+                                                [55.708587, 37.58667],
+                                                [55.668635, 37.518758],
+                                                [55.652314, 37.742223],
+                                                [55.646914, 37.746912],
+                                                [55.722294, 37.621534],
+                                                [55.589554, 37.373069],
+                                                [55.737796, 37.485772],
+                                                [55.846118, 37.363376],
+                                                [55.837404, 37.538125],
+                                                [55.701298, 37.503837],
+                                                [55.675352, 37.470662],
+                                                [55.718319, 37.41493],
+                                                [55.720231, 37.421623],
+                                                [55.734309, 37.416691],
+                                                [55.670681, 37.415541],
+                                                [55.775317, 37.745654],
+                                                [55.743061, 37.863908],
+                                                [55.743527, 37.866307],
+                                                [55.840487, 37.380929],
+                                                [55.758342, 37.413799],
+                                                [55.792918, 37.781668],
+                                                [55.793556, 37.801574],
+                                                [55.798146, 37.569225],
+                                                [55.867647, 37.49347],
+                                                [55.629613, 37.274757],
+                                                [55.616087, 37.220248],
+                                                [55.572411, 37.450854],
+                                                [55.616808, 37.212998],
+                                                [55.609162, 37.205821],
+                                                [55.870531, 37.636347],
+                                                [55.636595, 37.653676],
+                                                [55.637149, 37.656047],
+                                                [55.675544, 37.505894],
+                                                [55.689486, 37.531496],
+                                                [55.808948, 37.638],
+                                                [55.64192, 37.523456],
+                                                [55.625349, 37.508804],
+                                                [55.678499, 37.562757],
+                                                [55.684736, 37.571031],
+                                                [55.766668, 37.381585],
+                                                [55.717776, 37.792411],
+                                                [55.769079, 37.832611],
+                                                [55.727009, 37.471587],
+                                                [55.854805, 37.650918],
+                                                [55.674575, 37.760225],
+                                                [55.902868, 37.384585],
+                                                [55.789952, 37.678541],
+                                                [55.64985, 37.408463],
+                                                [55.802189, 37.406603],
+                                                [55.472112, 37.3023],
+                                                [55.747647, 37.565048],
+                                                [55.65917, 37.491359],
+                                                [55.658302, 37.413915],
+                                                [55.879243, 37.556541],
+                                                [55.63194, 37.48322],
+                                                [55.730999, 37.611482],
+                                                [55.669828, 37.558221],
+                                                [55.836777, 37.354644],
+                                                [55.689268, 37.578388],
+                                                [55.709272, 37.513556],
+                                                [55.817239, 37.569261],
+                                                [55.861297, 37.688899],
+                                                [55.825158, 37.525899],
+                                                [55.818508, 37.502669],
+                                                [55.77918, 37.517159],
+                                                [55.794366, 37.491143],
+                                                [55.799588, 37.483023],
+                                                [55.808923, 37.462317],
+                                                [55.725488, 37.403666],
+                                                [55.785078, 37.464886],
+                                                [55.640111, 37.532951],
+                                                [55.779008, 37.480211],
+                                                [55.677671, 37.666225],
+                                                [55.664604, 37.468192],
+                                                [55.884721, 37.60372],
+                                                [55.786435, 37.57139],
+                                                [55.715718, 37.881569],
+                                                [55.704671, 37.684883],
+                                                [55.862035, 37.604457],
+                                                [55.804369, 37.535646],
+                                                [55.641951, 37.345419],
+                                                [55.819965, 37.580238],
+                                                [55.810572, 37.797837],
+                                                [55.813723, 37.799328],
+                                                [55.823838, 37.818966],
+                                                [55.639461, 37.607143],
+                                                [55.653761, 37.615794],
+                                                [55.886711, 37.659416],
+                                                [55.782835, 37.729619],
+                                                [55.601305, 37.664635],
+                                                [55.852501, 37.68032],
+                                                [55.924835, 37.82264],
+                                                [55.921223, 37.848574],
+                                                [55.910644, 37.867708],
+                                                [55.926877, 37.857342],
+                                                [55.876274, 37.331998],
+                                                [55.551874, 37.702616],
+                                                [55.659246, 37.927177],
+                                                [55.909282, 37.719908],
+                                                [55.891779, 37.727499],
+                                                [55.696001, 37.335627],
+                                                [55.750393, 37.869505],
+                                                [55.925606, 37.996751],
+                                                [54.629315, 39.715567],
+                                                [54.622095, 39.757605],
+                                                            [55.80225, 37.300273],
+                                                                    [55.915853, 37.846091],
+                                                [56.017777, 37.885242],
+                                                [54.619415, 39.801695],
+                                                            [54.64228, 39.657172],
+                                                                    [54.604669, 39.739415],
+                                                [54.792222, 39.836225],
+                                                [54.603349, 39.825304],
+                                                [54.602537, 39.809099],
+                                                [54.629568, 39.775224],
+                                                [54.685577, 39.638463],
+                                                [54.627023, 39.712839],
+                                                [54.636337, 39.652527],
+                                                [54.605747, 39.815143],
+                                                [54.65376, 39.663403],
+                                                [54.6170181, 39.7213766],
+                                                [54.604324, 39.757348],
+                                                [54.633632, 39.760719],
+                                                            [54.725068, 39.52858],
+                                                                    [54.630725, 39.719885],
+                                                            [54.626445, 39.968528],
+                                                                                [54.696559, 39.800127],
+                                                                                                                                                                                                                                        [54.602023, 39.861105],
+                                                                    [54.633035, 39.710765],
+                                                [54.603254, 39.793796],
+                                                [54.607872, 39.807513],
+                                                [54.6844, 39.649726],
+                                                            [54.649649, 39.665989],
+                                                                                [54.629667, 39.746659],
+                                                ]
+
+    var plazaSpot = [
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                [54.725087, 39.500459],
+                                    [54.414485, 40.377047],
+                        [54.6526, 40.8796],
+                        [54.643801, 39.716091],
+                        [54.622343, 39.797829],
+                        [54.6294, 39.7408],
+                                                                                                                                                                ]
+</script>            </div><!-- /main content -->
+            
+        </div>    
+    </div> <!-- /container -->
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+ <div class="col-md-12" style="text-align: end; margin-top: -5px; padding:40px;">Сделано в <a href="http://buro-62.ru/">Бюро-62</a></div>
+                </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61954153-1', 'auto');
+  ga('send', 'pageview');
+
+</script><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter43087379 = new Ya.Metrika({
+                    id:43087379,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/43087379" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --></body>
+</html>
