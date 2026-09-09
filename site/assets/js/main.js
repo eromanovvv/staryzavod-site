@@ -94,9 +94,18 @@
         }).join('');
         if (location.hash) {
           var target = document.getElementById(location.hash.slice(1));
-          if (target) setTimeout(function () { target.scrollIntoView({ block: 'start', behavior: 'auto' }); }, 50);
+          if (target) setTimeout(function () { window.scrollTo({ top: target.offsetTop - 96, behavior: 'instant' }); }, 50);
         }
       }
+    });
+  }
+
+  // ---------- розница: сеть «Дом пива» ----------
+  var retail = document.getElementById('retail-list');
+  if (retail) {
+    fetch('data/retail.json').then(function (r) { return r.json(); }).then(function (j) {
+      retail.innerHTML = j.addresses.map(function (a) { return '<li>Рязань, ' + a + '</li>'; }).join('');
+      var c = document.getElementById('retail-count'); if (c) c.textContent = j.branches_total_2gis;
     });
   }
 })();
