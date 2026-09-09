@@ -6,7 +6,9 @@
     <!-- description: ... -->
 Запуск: python3 build.py   (из папки site/)
 """
-import pathlib, re
+import pathlib, re, time
+
+STAMP = str(int(time.time()))  # cache-busting for css/js
 
 ROOT = pathlib.Path(__file__).parent
 P = ROOT / "src" / "partials"
@@ -17,5 +19,6 @@ for page in sorted((ROOT / "src" / "pages").glob("*.html")):
     meta = dict(re.findall(r"<!--\s*(\w+):\s*(.*?)\s*-->", src[:600]))
     body = re.sub(r"^(<!--.*?-->\s*)+", "", src, flags=re.S)
     h = head.replace("{{title}}", meta.get("title", "Старый завод")).replace("{{description}}", meta.get("description", ""))
-    (ROOT / page.name).write_text(h + header + body + footer)
+    html = (h + header + body + footer).replace("assets/css/style.css", "assets/css/style.css?v=" + STAMP).replace("assets/js/main.js", "assets/js/main.js?v=" + STAMP)
+    (ROOT / page.name).write_text(html)
     print("built", page.name)

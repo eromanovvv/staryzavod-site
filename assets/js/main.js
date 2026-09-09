@@ -93,8 +93,8 @@
           return '<section class="cat-block" id="cat-' + c.id + '"><div class="head"><div class="n">0' + (i + 1) + '</div><div><h2 style="margin:0">' + c.title + '</h2><p>' + c.intro + '</p></div></div>' + photo + body + '</section>';
         }).join('');
         if (location.hash) {
-          var target = document.querySelector(location.hash);
-          if (target) target.scrollIntoView({ block: 'start' });
+          var target = document.getElementById(location.hash.slice(1));
+          if (target) setTimeout(function () { target.scrollIntoView({ block: 'start', behavior: 'auto' }); }, 50);
         }
       }
     });
