@@ -8,28 +8,185 @@
   "glass": "стекло 0,5 л, 12 шт. в коробке"
  },
  "categories": [
-  {"id": "beer", "title": "Пиво", "intro": "Варим в классической технологии, 100 % солод, хмель немецкий, американский и русский. Не фильтруем и не пастеризуем."},
-  {"id": "cider", "title": "Сидр", "intro": "Сок прямого отжима из яблок с рязанской земли."},
-  {"id": "mead", "title": "Медовуха", "intro": "Цветочный мёд от пчёл рязанского края."},
-  {"id": "schorle", "title": "Шорли", "intro": "Безалкогольный напиток на минеральной воде с натуральным соком. Варим под заказ, в том числе под вашей торговой маркой."},
-  {"id": "national", "title": "Национальные напитки", "intro": "Квас, сбитень и другие традиционные напитки брожения — готовим к выпуску. Уже сейчас можем сварить под вашей маркой.", "soon": true}
+  {
+   "id": "beer",
+   "title": "Пиво",
+   "intro": "Варим в классической технологии, 100 % солод, хмель немецкий, американский и русский. Не фильтруем и не пастеризуем."
+  },
+  {
+   "id": "cider",
+   "title": "Сидр",
+   "intro": "Сок прямого отжима из яблок с рязанской земли.",
+   "photo": "cider-apples.jpg",
+   "photo_alt": "Спасский сидр на свежих яблоках"
+  },
+  {
+   "id": "mead",
+   "title": "Медовуха",
+   "intro": "Цветочный мёд от пчёл рязанского края.",
+   "photo": "mead-frames.jpg",
+   "photo_alt": "Спасская медовуха на сотах"
+  },
+  {
+   "id": "schorle",
+   "title": "Шорли",
+   "intro": "Безалкогольный напиток на минеральной воде с натуральным соком. Варим под заказ, в том числе под вашей торговой маркой."
+  },
+  {
+   "id": "national",
+   "title": "Национальные напитки",
+   "intro": "Квас, сбитень и другие традиционные напитки брожения — готовим к выпуску. Уже сейчас можем сварить под вашей маркой.",
+   "soon": true
+  }
  ],
  "products": [
-  {"id": "lager", "category": "beer", "name": "Lager", "title": "Европейский «LAGER»", "style": "Светлое пиво", "abv": 4.7, "og": 11.7, "ibu": 24, "shelf": "180 дней", "image": "lager.png", "label": "lager-label.png",
-   "description": "Лёгкий, со вкусом солода, ноткой благородного хмеля и цветов в аромате.", "packaging": ["keg", "pet", "glass"]},
-  {"id": "weizen", "category": "beer", "name": "Weizen", "title": "Немецкое пшеничное «WEIZEN»", "style": "Пшеничное пиво", "abv": 4.8, "og": 12.5, "ibu": 13, "shelf": "180 дней", "image": "weizen.png", "label": "weizen-label.png",
-   "description": "Питкое пшеничное пиво с запахом банана и гвоздики.", "packaging": ["keg", "pet", "glass"]},
-  {"id": "ryazmarin", "category": "beer", "name": "Рязмарин", "title": "Пэйл-эль с розмарином «РЯЗМАРИН»", "style": "Английский пэйл-эль", "abv": 5.0, "og": 13.3, "ibu": 55, "shelf": "180 дней", "image": "ryazmarin.png", "label": "ryazmarin-label.png",
-   "description": "Английский пэйл-эль с добавлением отвара розмарина и с сухим охмелением. Очень напоминает лёгкую IPA с розмарином.", "packaging": ["keg", "pet", "glass"]},
-  {"id": "gulyaka", "category": "beer", "name": "Гуляка", "title": "Пэйл-эль оригинальный «ГУЛЯКА»", "style": "Пэйл-эль", "abv": 5.0, "og": 12, "ibu": 17, "shelf": "6 месяцев", "image": "gulyaka.png",
-   "description": "Пэйл-эль с сухим охмелением, уводящим в травянистые и фруктовые ноты.", "packaging": ["keg", "pet", "glass"]},
-  {"id": "stout", "category": "beer", "name": "Stout", "title": "Тёмный ирландский «STOUT»", "style": "Сухой ирландский стаут", "abv": 4.5, "og": 11.4, "ibu": 26, "shelf": "180 дней", "image": "stout.png",
-   "description": "Сухой ирландский стаут с кофейными и шоколадными нотами.", "packaging": ["keg", "glass"], "packaging_note": "стекло 0,5 л и 0,33 л"},
-  {"id": "cider", "category": "cider", "name": "Spassk Cider", "title": "Сидр сухой «SPASSK Cider»", "style": "Сухой сидр", "abv": 5.0, "og": null, "ibu": null, "shelf": "270 дней", "image": "cider.png", "label": "cider-label.png",
-   "description": "Сухой сидр, сделанный на соке прямого отжима из яблок с рязанской земли.", "packaging": ["keg", "glass"]},
-  {"id": "mead", "category": "mead", "name": "Spassk Mead", "title": "Медовуха «SPASSK MEAD» классическая", "style": "Полусухая медовуха", "abv": 5.0, "og": null, "ibu": null, "shelf": "270 дней", "image": "mead.png", "label": "mead-label.png",
-   "description": "Классическая полусухая медовуха, сваренная на цветочном мёде от пчёл рязанского края. Начинается с запаха яблока с мёдом.", "packaging": ["keg", "pet", "glass"]},
-  {"id": "schorle", "category": "schorle", "name": "Шорли", "title": "Шорли яблочный", "style": "Безалкогольный", "abv": 0, "og": null, "ibu": null, "shelf": null, "image": null,
-   "description": "Напиток на основе минеральной воды с натуральным соком. Подаётся в баре Alter Brauch; для партнёров — под заказ и под вашей маркой.", "packaging": ["keg", "pet"], "on_request": true}
+  {
+   "id": "lager",
+   "category": "beer",
+   "name": "Lager",
+   "title": "Европейский «LAGER»",
+   "style": "Светлое пиво",
+   "abv": 4.7,
+   "og": 11.7,
+   "ibu": 24,
+   "shelf": "180 дней",
+   "image": "lager.png",
+   "label": "lager-label.png",
+   "description": "Лёгкий, со вкусом солода, ноткой благородного хмеля и цветов в аромате.",
+   "packaging": [
+    "keg",
+    "pet",
+    "glass"
+   ]
+  },
+  {
+   "id": "weizen",
+   "category": "beer",
+   "name": "Weizen",
+   "title": "Немецкое пшеничное «WEIZEN»",
+   "style": "Пшеничное пиво",
+   "abv": 4.8,
+   "og": 12.5,
+   "ibu": 13,
+   "shelf": "180 дней",
+   "image": "weizen.png",
+   "label": "weizen-label.png",
+   "description": "Питкое пшеничное пиво с запахом банана и гвоздики.",
+   "packaging": [
+    "keg",
+    "pet",
+    "glass"
+   ]
+  },
+  {
+   "id": "ryazmarin",
+   "category": "beer",
+   "name": "Рязмарин",
+   "title": "Пэйл-эль с розмарином «РЯЗМАРИН»",
+   "style": "Английский пэйл-эль",
+   "abv": 5.0,
+   "og": 13.3,
+   "ibu": 55,
+   "shelf": "180 дней",
+   "image": "ryazmarin.png",
+   "label": "ryazmarin-label.png",
+   "description": "Английский пэйл-эль с добавлением отвара розмарина и с сухим охмелением. Очень напоминает лёгкую IPA с розмарином.",
+   "packaging": [
+    "keg",
+    "pet",
+    "glass"
+   ]
+  },
+  {
+   "id": "gulyaka",
+   "category": "beer",
+   "name": "Гуляка",
+   "title": "Пэйл-эль оригинальный «ГУЛЯКА»",
+   "style": "Пэйл-эль",
+   "abv": 5.0,
+   "og": 12,
+   "ibu": 17,
+   "shelf": "6 месяцев",
+   "image": "gulyaka.png",
+   "description": "Пэйл-эль с сухим охмелением, уводящим в травянистые и фруктовые ноты.",
+   "packaging": [
+    "keg",
+    "pet",
+    "glass"
+   ]
+  },
+  {
+   "id": "stout",
+   "category": "beer",
+   "name": "Stout",
+   "title": "Тёмный ирландский «STOUT»",
+   "style": "Сухой ирландский стаут",
+   "abv": 4.5,
+   "og": 11.4,
+   "ibu": 26,
+   "shelf": "180 дней",
+   "image": "stout.png",
+   "description": "Сухой ирландский стаут с кофейными и шоколадными нотами.",
+   "packaging": [
+    "keg",
+    "glass"
+   ],
+   "packaging_note": "стекло 0,5 л и 0,33 л"
+  },
+  {
+   "id": "cider",
+   "category": "cider",
+   "name": "Spassk Cider",
+   "title": "Сидр сухой «SPASSK Cider»",
+   "style": "Сухой сидр",
+   "abv": 5.0,
+   "og": null,
+   "ibu": null,
+   "shelf": "270 дней",
+   "image": "cider.png",
+   "label": "cider-label.png",
+   "description": "Сухой сидр, сделанный на соке прямого отжима из яблок с рязанской земли.",
+   "packaging": [
+    "keg",
+    "glass"
+   ]
+  },
+  {
+   "id": "mead",
+   "category": "mead",
+   "name": "Spassk Mead",
+   "title": "Медовуха «SPASSK MEAD» классическая",
+   "style": "Полусухая медовуха",
+   "abv": 5.0,
+   "og": null,
+   "ibu": null,
+   "shelf": "270 дней",
+   "image": "mead.png",
+   "label": "mead-label.png",
+   "description": "Классическая полусухая медовуха, сваренная на цветочном мёде от пчёл рязанского края. Начинается с запаха яблока с мёдом.",
+   "packaging": [
+    "keg",
+    "pet",
+    "glass"
+   ]
+  },
+  {
+   "id": "schorle",
+   "category": "schorle",
+   "name": "Шорли",
+   "title": "Шорли яблочный",
+   "style": "Безалкогольный",
+   "abv": 0,
+   "og": null,
+   "ibu": null,
+   "shelf": null,
+   "image": null,
+   "description": "Напиток на основе минеральной воды с натуральным соком. Подаётся в баре Alter Brauch; для партнёров — под заказ и под вашей маркой.",
+   "packaging": [
+    "keg",
+    "pet"
+   ],
+   "on_request": true
+  }
  ]
 }
