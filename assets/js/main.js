@@ -89,8 +89,13 @@
           var body = c.soon
             ? '<div class="card soon"><span class="tag tag-soft">Скоро</span><p style="margin:12px 0 0">' + c.intro + ' <a href="business.html#stm">Обсудить выпуск под вашей маркой</a></p></div>'
             : '<div class="products">' + items.map(function (p) { return card(p, j, c); }).join('') + '</div>';
-          return '<section class="cat-block" id="cat-' + c.id + '"><div class="head"><div class="n">0' + (i + 1) + '</div><div><h2 style="margin:0">' + c.title + '</h2><p>' + c.intro + '</p></div></div>' + body + '</section>';
+          var photo = c.photo ? '<img class="cat-photo" loading="lazy" src="assets/img/photos/' + c.photo + '" alt="' + (c.photo_alt || c.title) + '">' : '';
+          return '<section class="cat-block" id="cat-' + c.id + '"><div class="head"><div class="n">0' + (i + 1) + '</div><div><h2 style="margin:0">' + c.title + '</h2><p>' + c.intro + '</p></div></div>' + photo + body + '</section>';
         }).join('');
+        if (location.hash) {
+          var target = document.querySelector(location.hash);
+          if (target) target.scrollIntoView({ block: 'start' });
+        }
       }
     });
   }

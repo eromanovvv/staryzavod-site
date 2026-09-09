@@ -210,3 +210,18 @@ footer .legal{border-top:1px solid rgba(255,255,255,.18);padding-top:18px;font-s
 .agegate .actions{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* цветные фото: сад, пасека */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.duo figure{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--cream-2)}
+.duo img{width:100%;height:100%;object-fit:cover}
+.duo figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.65))}
+.duo figcaption b{display:block;font-size:1.5rem;font-weight:800;line-height:1.05;margin-bottom:6px}
+.duo figcaption span{font-size:.95rem;opacity:.95}
+.duo figcaption a{color:#fff;text-decoration:underline}
+@media (max-width:700px){.duo{grid-template-columns:1fr}.duo figure{aspect-ratio:4/5}}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius)}
+@media (max-width:820px){.strip{grid-template-columns:repeat(2,1fr)}}
+.cat-photo{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--radius);margin-bottom:22px}
+@media (max-width:700px){.cat-photo{aspect-ratio:4/3}}
