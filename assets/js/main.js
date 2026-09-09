@@ -27,8 +27,7 @@
   });
 
   // ---------- форма заявки ----------
-  // В прототипе заявка не отправляется на сервер. Варианты подключения см. README:
-  // Telegram-бот (fetch на api.telegram.org через свой прокси), Formspree, Yandex Forms, почта через хостинг.
+  // В прототипе заявка не отправляется на сервер. Варианты подключения см. README.
   document.querySelectorAll('form.lead').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -39,7 +38,7 @@
       var okBox = f.querySelector('.ok');
       if (okBox) {
         okBox.style.display = 'block';
-        okBox.innerHTML = 'Спасибо! Заявка принята. Менеджер свяжется с вами в течение рабочего дня.' +
+        okBox.innerHTML = 'Спасибо! Заявка принята. Ответим в течение рабочего дня.' +
           ' <br><small>Прототип: письмо не отправлено. Дублировать в Telegram: <a target="_blank" rel="noopener" href="https://t.me/share/url?url=&text=' +
           encodeURIComponent(text) + '">открыть Telegram</a></small>';
       }
@@ -48,75 +47,51 @@
   });
 
   // ---------- каталог ----------
-  var catalog = document.getElementById('catalog');
-  if (catalog) {
-    var limit = parseInt(catalog.getAttribute('data-limit') || '0', 10);
-    fetch('data/products.json').then(function (r) { return r.json(); }).then(function (j) {
-      var items = j.products;
-      var onTap = (j.on_tap || []);
-      function render(cat) {
-        var list = items.filter(function (p) { return cat === 'all' || p.category === cat || (p.tags || []).indexOf(cat) >= 0; });
-        if (limit) list = list.slice(0, limit);
-        catalog.innerHTML = list.map(function (p) {
-          var specs = [];
-          if (p.abv !== null && p.abv !== undefined) specs.push('Alc ' + String(p.abv).replace('.', ',') + '%');
-          if (p.og) specs.push('OG ' + String(p.og).replace('.', ',') + '%');
-          if (p.ibu) specs.push('IBU ' + p.ibu);
-          return '<article class="product">' +
-            '<div class="pic"><img loading="lazy" src="assets/img/products/' + p.image + '" alt="' + p.name + '"></div>' +
-            '<div class="body">' +
-            (onTap.indexOf(p.id) >= 0 ? '<span class="badge badge-tap">На кране в баре</span>' : '') +
-            '<h3>' + p.name + '</h3><div class="style">' + p.style + '</div>' +
-            '<div class="specs">' + specs.map(function (s) { return '<span class="spec">' + s + '</span>'; }).join('') + '</div>' +
-            '<p>' + p.description + '</p>' +
-            (p.pairing ? '<p class="muted" style="font-size:.82rem">К столу: ' + p.pairing + '</p>' : '') +
-            '<p class="muted" style="font-size:.82rem;margin-top:auto">Тара: ' + (p.packaging || 'кег, бутылка 0,5 л') + '</p>' +
-            '</div></article>';
-        }).join('');
-      }
-      render('all');
-      document.querySelectorAll('.filters .chip').forEach(function (c) {
-        c.addEventListener('click', function () {
-          document.querySelectorAll('.filters .chip').forEach(function (x) { x.classList.remove('active'); });
-          c.classList.add('active');
-          render(c.getAttribute('data-cat'));
-        });
-      });
-    });
+  function specsOf(p) {
+    var s = [];
+    if (p.abv !== null && p.abv !== undefined) s.push('ALC ' + String(p.abv).replace('.', ',') + '%');
+    if (p.og) s.push('OG ' + String(p.og).replace('.', ',') + '%');
+    if (p.ibu) s.push('IBU ' + p.ibu);
+    return s;
+  }
+  function packOf(p, all) {
+    var parts = (p.packaging || []).map(function (k) { return all[k]; });
+    if (p.packaging_note) parts.push(p.packaging_note);
+    return parts.join(', ');
+  }
+  function card(p, j, cat) {
+    return '<article class="product">' +
+      (p.image ? '<div class="pic"><img loading="lazy" src="assets/img/products/' + p.image + '" alt="' + p.title + '"></div>'
+               : '<div class="pic empty">Фото появится</div>') +
+      '<div class="body">' +
+      '<span class="kicker">' + (cat ? cat.title : '') + (p.on_request ? ', под заказ' : '') + '</span>' +
+      '<h3>' + p.title + '</h3><div class="style">' + p.style + '</div>' +
+      '<div class="specs">' + specsOf(p).map(function (s) { return '<span class="spec">' + s + '</span>'; }).join('') + '</div>' +
+      '<p>' + p.description + '</p>' +
+      '<div class="pack">' + packOf(p, j.packaging_all) + (p.shelf ? '<br>Хранение ' + j.storage + ', ' + p.shelf : '') + '</div>' +
+      '</div></article>';
   }
 
-  // ---------- точки продаж ----------
-  var points = document.getElementById('points');
-  if (points) {
-    fetch('data/points.json').then(function (r) { return r.json(); }).then(function (j) {
-      var q = document.getElementById('points-q');
-      var city = document.getElementById('points-city');
-      var count = document.getElementById('points-count');
-      function cityOf(addr) {
-        if (/^Москва/.test(addr)) return 'Москва';
-        if (/^Московск/.test(addr)) return 'Московская область';
-        if (/^Рязань/.test(addr)) return 'Рязань';
-        return 'Рязанская область';
+  var catalog = document.getElementById('catalog');           // плоский список (главная)
+  var grouped = document.getElementById('catalog-grouped');   // по категориям (страница «Продукция»)
+  if (catalog || grouped) {
+    fetch('data/products.json').then(function (r) { return r.json(); }).then(function (j) {
+      var cats = {}; j.categories.forEach(function (c) { cats[c.id] = c; });
+      if (catalog) {
+        var limit = parseInt(catalog.getAttribute('data-limit') || '0', 10);
+        var list = j.products.filter(function (p) { return p.image; });
+        if (limit) list = list.slice(0, limit);
+        catalog.innerHTML = list.map(function (p) { return card(p, j, cats[p.category]); }).join('');
       }
-      function render() {
-        var qq = (q.value || '').toLowerCase();
-        var cc = city.value;
-        var total = 0;
-        var html = j.groups.map(function (g) {
-          var pts = g.points.filter(function (a) {
-            return (cc === 'all' || cityOf(a) === cc) && (!qq || a.toLowerCase().indexOf(qq) >= 0 || g.chain.toLowerCase().indexOf(qq) >= 0);
-          });
-          if (!pts.length) return '';
-          total += pts.length;
-          return '<div class="chain"><h3>' + g.chain + ' <small>' + pts.length + '</small></h3><ul>' +
-            pts.map(function (a) { return '<li>' + a + '</li>'; }).join('') + '</ul></div>';
+      if (grouped) {
+        grouped.innerHTML = j.categories.map(function (c, i) {
+          var items = j.products.filter(function (p) { return p.category === c.id; });
+          var body = c.soon
+            ? '<div class="card soon"><span class="tag tag-soft">Скоро</span><p style="margin:12px 0 0">' + c.intro + ' <a href="business.html#stm">Обсудить выпуск под вашей маркой</a></p></div>'
+            : '<div class="products">' + items.map(function (p) { return card(p, j, c); }).join('') + '</div>';
+          return '<section class="cat-block" id="cat-' + c.id + '"><div class="head"><div class="n">0' + (i + 1) + '</div><div><h2 style="margin:0">' + c.title + '</h2><p>' + c.intro + '</p></div></div>' + body + '</section>';
         }).join('');
-        points.innerHTML = html || '<p class="muted">Ничего не найдено.</p>';
-        if (count) count.textContent = total;
       }
-      q.addEventListener('input', render);
-      city.addEventListener('change', render);
-      render();
     });
   }
 })();
