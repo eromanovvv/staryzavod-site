@@ -77,7 +77,12 @@ python3 -m http.server 8765 # http://localhost:8765
 
 ## Живая ссылка на прототип
 
-GitHub Pages для приватного репозитория на бесплатном плане недоступен. Чтобы получить ссылку:
-сделать репозиторий публичным, скопировать `deploy/github-pages.yml` в `.github/workflows/`
-(через веб-интерфейс GitHub или `git push` с токеном, имеющим scope `workflow`) и включить
-Pages → Source: GitHub Actions. Альтернатива — залить папку `site/` на любой хостинг.
+**https://eromanovvv.github.io/staryzavod-site/** — GitHub Pages из ветки `gh-pages` (репозиторий публичный).
+
+Обновить после правок:
+```bash
+cd site && python3 build.py && cd ..
+git add -A && git commit -m "..." && git push
+git subtree split --prefix site -b gh-pages && git push -f origin gh-pages && git branch -D gh-pages
+```
+Альтернатива — workflow в `deploy/github-pages.yml` (нужен токен со scope `workflow`).
