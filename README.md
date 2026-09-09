@@ -74,3 +74,10 @@ python3 -m http.server 8765 # http://localhost:8765
 
 - https://старыйзавод.рф (xn--80aagiml2blhk5h.xn--p1ai) — собрано 9 сентября 2026
 - https://alter-brauch.ru — собрано 9 сентября 2026
+
+## Живая ссылка на прототип
+
+GitHub Pages для приватного репозитория на бесплатном плане недоступен. Чтобы получить ссылку:
+сделать репозиторий публичным, скопировать `deploy/github-pages.yml` в `.github/workflows/`
+(через веб-интерфейс GitHub или `git push` с токеном, имеющим scope `workflow`) и включить
+Pages → Source: GitHub Actions. Альтернатива — залить папку `site/` на любой хостинг.
