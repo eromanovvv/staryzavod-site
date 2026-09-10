@@ -36,7 +36,8 @@ site/                    прототип нового сайта (статик�
   bar.html               бар Alter Brauch: краны, кухня, события
   contacts.html          контакты и форма
   v2/                    версия 2: одностраничник (index.html, v2.css, v2.js), карусель, бегущая фотолента
-  v3/                    версия 3: «Мещёрская сторона» (index.html, v3.css, v3.js), главы, развороты напитков, схема пути, линейка глубины
+  v3/                    версия 3 (основная): src/pages/*.html + src/{head,header,footer}.html -> build.py -> index, products, partners, where, plant, bar, contacts
+  assets/docs/           презентация 2025 без слайда с ценами (для скачивания партнёрами)
   assets/img/thumbs/     уменьшенные фото для мозаики и ленты v2
   data/products.json     данные каталога (правятся без вёрстки)
   src/pages/*.html       исходники страниц (без шапки/подвала)
@@ -57,9 +58,7 @@ python3 -m http.server 8765 # http://localhost:8765
 
 ## Что подключить перед запуском
 
-1. **Форма заявки.** Сейчас `main.js` только показывает «спасибо» и пишет заявку в консоль.
-   Варианты: Telegram-бот через небольшой прокси (Cloudflare Worker / Yandex Cloud Function),
-   Formspree, Yandex Forms, PHP-обработчик на хостинге.
+1. **Форма заявки.** В v3 форма открывает WhatsApp отдела продаж (+7 910 568-68-02) с готовым текстом заявки, запасной путь — письмо на prussakov10@gmail.com. Подтвердить у Васи, что на этом номере есть WhatsApp/Telegram. Позже можно добавить Telegram-бот или почтовый обработчик, чтобы заявки сохранялись.
 2. **Карта на «Где купить».** Появится, когда будет розница: Яндекс.Карты JS API, геокодировать адреса один раз.
 3. **Данные от Васи.** Чек-лист в `research/ANALYSIS.md`, §5. В прототипе места, где нужны
    его данные, отмечены жёлтыми плашками «⚠ Уточнить у Васи».
@@ -84,7 +83,7 @@ python3 -m http.server 8765 # http://localhost:8765
 
 **Версия 1 (многостраничная, по презентации):** https://eromanovvv.github.io/staryzavod-site/
 **Версия 2 (одностраничная, фото и анимация, по референсам Base Camp / Stone Brewing / Riesling Boyz):** https://eromanovvv.github.io/staryzavod-site/v2/
-**Версия 3 («Мещёрская сторона»: книга о заводе с главами, палитра из места, шрифты Old Standard TT + Golos Text, развороты напитков в цвете этикеток):** https://eromanovvv.github.io/staryzavod-site/v3/
+**Версия 3, основная («Мещёрская сторона»: семь страниц, палитра из места, Old Standard TT + Golos Text, развороты напитков в цвете этикеток, форма в WhatsApp):** https://eromanovvv.github.io/staryzavod-site/v3/
 
 Переключатель версий — в левом нижнем углу обеих. Обе собираются из одной папки `site/` и одних данных `site/data/products.json`; v2 лежит в `site/v2/` (index.html, v2.css, v2.js) и не использует build.py. GitHub Pages из ветки `gh-pages`.
 

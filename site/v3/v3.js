@@ -15,7 +15,11 @@
 
   // header: прозрачная над обложкой, плотная дальше
   var hdr = document.querySelector('.hdr'), hero = document.querySelector('.hero');
-  function onScroll() { hdr.classList.toggle('solid', window.scrollY > hero.offsetHeight - 80); }
+  function onScroll() {
+    if (!hero) return;
+    var past = window.scrollY > 40;
+    hdr.classList.toggle('solid', past); hdr.classList.toggle('over', !past);
+  }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   var burger = document.querySelector('.burger'), nav = document.querySelector('.hdr nav');
   burger.addEventListener('click', function () { nav.classList.toggle('open'); });
@@ -45,6 +49,7 @@
     fetch('../data/products.json').then(function (r) { return r.json(); }).then(function (j) {
       var cats = {}; j.categories.forEach(function (c) { cats[c.id] = c; });
       var list = j.products.filter(function (p) { return p.image && palette[p.id]; });
+      var limit = parseInt(host.getAttribute('data-limit') || '0', 10); if (limit) list = list.slice(0, limit);
       host.innerHTML = list.map(function (p, i) {
         var c = palette[p.id];
         var rows = [];
@@ -67,15 +72,41 @@
     });
   }
 
-  // форма (прототип)
+  // форма: заявка уходит готовым сообщением в WhatsApp отдела продаж или письмом
+  var SALES_WA = '79105686802', SALES_MAIL = 'prussakov10@gmail.com';
+  function collect(f) {
+    var lines = [];
+    new FormData(f).forEach(function (v, k) { if (String(v).trim()) lines.push(k + ': ' + v); });
+    return 'Заявка с сайта «Старый завод»\n' + lines.join('\n');
+  }
   document.querySelectorAll('form.lead').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      var data = {}; new FormData(f).forEach(function (v, k) { data[k] = v; });
-      var text = 'Заявка с сайта staryzavod (v3)\n' + Object.keys(data).map(function (k) { return k + ': ' + data[k]; }).join('\n');
+      var text = collect(f);
+      window.open('https://wa.me/' + SALES_WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
       var ok = f.querySelector('.ok'); ok.style.display = 'block';
-      ok.innerHTML = 'Заявка принята, ответим в течение рабочего дня. <br><small>Прототип: письмо не отправлено. <a style="color:#fff" target="_blank" rel="noopener" href="https://t.me/share/url?url=&text=' + encodeURIComponent(text) + '">Продублировать в Telegram</a></small>';
-      f.querySelectorAll('input,textarea,select,button').forEach(function (el) { el.disabled = true; });
+      ok.innerHTML = 'Открыли WhatsApp с текстом заявки. Если окно не появилось, <a style="color:#fff" target="_blank" rel="noopener" href="https://wa.me/' + SALES_WA + '?text=' + encodeURIComponent(text) + '">нажмите сюда</a> или <a style="color:#fff" href="mailto:' + SALES_MAIL + '?subject=' + encodeURIComponent('Заявка с сайта') + '&body=' + encodeURIComponent(text) + '">отправьте на почту</a>.';
     });
+    var mail = f.querySelector('[data-mail]');
+    if (mail) mail.addEventListener('click', function () {
+      if (!f.reportValidity()) return;
+      var text = collect(f);
+      location.href = 'mailto:' + SALES_MAIL + '?subject=' + encodeURIComponent('Заявка с сайта «Старый завод»') + '&body=' + encodeURIComponent(text);
+    });
+  });
+
+  // розница: сеть «Дом пива»
+  var retail = document.getElementById('retail-list');
+  if (retail) {
+    fetch('../data/retail.json').then(function (r) { return r.json(); }).then(function (j) {
+      retail.innerHTML = j.addresses.map(function (a) { return '<li>Рязань, ' + a + '</li>'; }).join('');
+      var c = document.getElementById('retail-count'); if (c) c.textContent = j.branches_total_2gis;
+    });
+  }
+
+  // цели для Метрики: data-goal="tel|messenger|pdf" (подключить после установки счётчика)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-goal]');
+    if (a && window.ym && window.YM_ID) ym(window.YM_ID, 'reachGoal', a.getAttribute('data-goal'));
   });
 })();
