@@ -36,6 +36,7 @@ site/                    прототип нового сайта (статик�
   bar.html               бар Alter Brauch: краны, кухня, события
   contacts.html          контакты и форма
   v2/                    версия 2: одностраничник (index.html, v2.css, v2.js), карусель, бегущая фотолента
+  v3/                    версия 3: «Мещёрская сторона» (index.html, v3.css, v3.js), главы, развороты напитков, схема пути, линейка глубины
   assets/img/thumbs/     уменьшенные фото для мозаики и ленты v2
   data/products.json     данные каталога (правятся без вёрстки)
   src/pages/*.html       исходники страниц (без шапки/подвала)
@@ -83,6 +84,7 @@ python3 -m http.server 8765 # http://localhost:8765
 
 **Версия 1 (многостраничная, по презентации):** https://eromanovvv.github.io/staryzavod-site/
 **Версия 2 (одностраничная, фото и анимация, по референсам Base Camp / Stone Brewing / Riesling Boyz):** https://eromanovvv.github.io/staryzavod-site/v2/
+**Версия 3 («Мещёрская сторона»: книга о заводе с главами, палитра из места, шрифты Old Standard TT + Golos Text, развороты напитков в цвете этикеток):** https://eromanovvv.github.io/staryzavod-site/v3/
 
 Переключатель версий — в левом нижнем углу обеих. Обе собираются из одной папки `site/` и одних данных `site/data/products.json`; v2 лежит в `site/v2/` (index.html, v2.css, v2.js) и не использует build.py. GitHub Pages из ветки `gh-pages`.
 
