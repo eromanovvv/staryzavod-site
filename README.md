@@ -35,6 +35,8 @@ site/                    прототип нового сайта (статик�
   about.html             история 1911 → сегодня, технология, награды, экскурсии
   bar.html               бар Alter Brauch: краны, кухня, события
   contacts.html          контакты и форма
+  v2/                    версия 2: одностраничник (index.html, v2.css, v2.js), карусель, бегущая фотолента
+  assets/img/thumbs/     уменьшенные фото для мозаики и ленты v2
   data/products.json     данные каталога (правятся без вёрстки)
   src/pages/*.html       исходники страниц (без шапки/подвала)
   src/partials/          head, header, footer
@@ -79,7 +81,10 @@ python3 -m http.server 8765 # http://localhost:8765
 
 ## Живая ссылка на прототип
 
-**https://eromanovvv.github.io/staryzavod-site/** — GitHub Pages из ветки `gh-pages` (репозиторий публичный).
+**Версия 1 (многостраничная, по презентации):** https://eromanovvv.github.io/staryzavod-site/
+**Версия 2 (одностраничная, фото и анимация, по референсам Base Camp / Stone Brewing / Riesling Boyz):** https://eromanovvv.github.io/staryzavod-site/v2/
+
+Переключатель версий — в левом нижнем углу обеих. Обе собираются из одной папки `site/` и одних данных `site/data/products.json`; v2 лежит в `site/v2/` (index.html, v2.css, v2.js) и не использует build.py. GitHub Pages из ветки `gh-pages`.
 
 Обновить после правок:
 ```bash
