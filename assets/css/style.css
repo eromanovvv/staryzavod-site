@@ -229,3 +229,6 @@ footer .legal{border-top:1px solid rgba(255,255,255,.18);padding-top:18px;font-s
 .chain ul{columns:2;column-gap:32px;padding-left:18px;margin:0;font-size:.95rem}
 .chain li{break-inside:avoid;margin-bottom:6px}
 @media (max-width:700px){.chain ul{columns:1}}
+.switch{position:fixed;left:14px;bottom:14px;z-index:60;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 8px;font-size:.72rem;box-shadow:0 6px 20px rgba(0,0,0,.12);display:flex;gap:4px;align-items:center}
+.switch a,.switch span{padding:5px 10px;border-radius:999px}
+.switch span{background:var(--ink);color:#fff}
