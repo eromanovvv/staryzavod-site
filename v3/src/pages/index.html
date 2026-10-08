@@ -1,19 +1,18 @@
 <!-- title: Старый завод. Пиво, сидр и медовуха из Мещёры -->
-<!-- description: Пивоварня в спиртовом цехе 1911 года посреди Мещёры. Лагер, пшеничное, пэйл-эли и стаут, сухой сидр из местных яблок, медовуха на мёде своей пасеки. Кеги, ПЭТ, стекло. Поставки барам и магазинам. -->
+<!-- description: Пивоварня в здании завода 1911 года посреди Мещёры. Лагер, пшеничное, пэйл-эли и стаут, сухой сидр из яблок рязанских садов, медовуха на мёде рязанских пасек. Кеги, ПЭТ, стекло. Поставки барам и магазинам, контрактные варки и СТМ. -->
 <!-- hero: dark -->
 
 <section class="hero" id="top">
   <div class="bg"></div><div class="tint"></div><div class="mist"></div>
   <div class="wrap">
     <div>
-      <div class="year">Спиртовой цех 1911 года</div>
+      <div class="year">Завод 1911 года</div>
       <h1>Пиво из Мещёрской стороны</h1>
-      <p class="sub">Варим в старом заводе среди сосновых лесов и озёр, на воде с глубины восьмидесяти пяти метров. Сидр из яблок с соседних садов, медовуха с мёдом своей пасеки.</p>
+      <p class="sub">Варим в старом заводе среди сосновых лесов и озёр, на воде с глубины восьмидесяти пяти метров. Сидр из яблок рязанских садов, медовуха на мёде рязанских пасек.</p>
       <div class="actions"><a class="btn inv" href="products.html">Что мы варим</a><a class="btn inv" href="partners.html">Партнёрам</a></div>
     </div>
     <div class="side"><b>105</b><span>километров от Рязани, село Городковичи, край Окского заповедника</span></div>
   </div>
-  <div class="down">Листайте</div>
 </section>
 
 <section class="proof">
@@ -32,7 +31,7 @@
     <div class="place">
       <div class="text reveal">
         <p class="lead">Мещёра начинается там, где заканчиваются рязанские поля: сосновые боры, торфяные озёра, туманы над поймой Оки. В 1911 году здесь построили винокуренный завод, и один из его цехов сегодня занимает наша пивоварня.</p>
-        <p>Вода для варки поднимается из собственной скважины глубиной 85 метров и проходит глубокую очистку. Яблоки для сидра собирают в садах рязанской земли, мёд для медовухи дают пчёлы своей пасеки. Пряности, соки и всё остальное тоже местное.</p>
+        <p>Вода для варки поднимается из собственной скважины глубиной 85 метров и проходит глубокую очистку. Яблоки для сидра собирают в садах Рязанской области, мёд для медовухи берём с рязанских пасек. Пряности, соки и всё остальное тоже местное.</p>
         <div class="facts">
           <div class="depth" aria-hidden="true">
             <svg viewBox="0 0 54 300" preserveAspectRatio="none">
@@ -74,25 +73,26 @@
 <section class="chapter" id="beer" style="padding-bottom:0">
   <div class="wrap">
     <div class="chapter-head reveal"><span class="num">Глава II</span><h2>Что мы варим</h2></div>
-    <p class="lead reveal" style="margin-bottom:clamp(28px,4vw,48px)">Семь напитков, каждый на свой лад. Все нефильтрованные, непастеризованные, на одной воде. Ниже каждому отведён свой цвет: это цвет его этикетки. <a href="products.html">Подробно о каждом и сводная таблица</a>.</p>
+    <p class="lead reveal" style="margin-bottom:clamp(20px,3vw,36px)">Три вида напитков, у каждой бутылки свой цвет: это цвет её этикетки. Листайте карточки, <a href="products.html">подробно о каждом и сводная таблица</a> на странице продукции.</p>
+    <div class="kinds reveal" role="tablist" aria-label="Виды напитков">
+      <button class="kind-tab" role="tab" data-kind="beer" aria-selected="true">Пиво и пивные напитки</button>
+      <button class="kind-tab" role="tab" data-kind="cidermead" aria-selected="false">Сидры и миды</button>
+      <button class="kind-tab" role="tab" data-kind="soft" aria-selected="false">Безалкогольные напитки</button>
+    </div>
   </div>
 </section>
-<div id="spreads" data-limit="4"></div>
-<section class="soon">
-  <div class="wrap">
-    <span class="num">Ещё три</span>
-    <div><h3>Гуляка, Spassk Cider, Spassk Mead</h3><p class="small" style="margin:6px 0 0">Пэйл-эль с портретом рязанского поэта, сухой сидр и медовуха на мёде своей пасеки. И скоро: шорли, квас, сбитень.</p></div>
-    <a class="btn" href="products.html">Вся продукция</a>
-  </div>
-</section>
+<div class="carousel" id="carousel">
+  <button class="arrow prev" aria-label="Назад">←</button>
+  <div class="track"></div>
+  <button class="arrow next" aria-label="Вперёд">→</button>
+</div>
 
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal"><span class="num">Между главами</span><h2>Сад и пасека</h2></div>
-    <div class="band reveal">
-      <figure><img src="../assets/img/thumbs/cider-apples.jpg" alt="Сидр на свежих яблоках" loading="lazy"><figcaption>Яблоки, сентябрь</figcaption></figure>
-      <figure><img src="../assets/img/thumbs/bees.jpg" alt="Пчёлы у ульев" loading="lazy"><figcaption>Ульи у завода</figcaption></figure>
-      <figure><img src="../assets/img/thumbs/honey-knife.jpg" alt="Распечатка сот" loading="lazy"><figcaption>Распечатка рамки</figcaption></figure>
+    <div class="origin reveal">
+      <figure><img src="../assets/img/thumbs/cider-apples.jpg" alt="Сидр на свежих яблоках" loading="lazy"><figcaption>Сидры делаем из яблок садов Рязанской области</figcaption></figure>
+      <figure><img src="../assets/img/thumbs/beekeeper.jpg" alt="Пасечник с рамкой" loading="lazy"><figcaption>Мёд берём с рязанских пасек</figcaption></figure>
     </div>
   </div>
 </section>
@@ -101,12 +101,17 @@
   <div class="wrap">
     <div class="chapter-head reveal"><span class="num">Глава III</span><h2>Завод</h2></div>
     <div class="grid">
-      <img class="brick" src="../assets/img/photos/factory-color.jpg" alt="Корпуса старого спиртзавода в Городковичах">
+      <img class="brick" src="../assets/img/photos/factory-front-bw.jpg" alt="Корпуса завода 1911 года в Городковичах">
       <div class="reveal">
         <p class="lead">Красный кирпич, высокие окна, толстые стены, которые держат прохладу летом. Здание построили как винокуренный завод при усадьбе Беклемишевых, по проекту немецкого инженера Франца Круля.</p>
         <p style="color:#c9d1c6">Сегодня в этих стенах варочный цех, бродильня, склад и небольшой музей. Оборудование из нержавеющей стали, классическая технология, 100 % солод, хмель немецкий, американский и русский.</p>
         <a class="btn inv" href="plant.html">История, технология, экскурсии</a>
       </div>
+    </div>
+    <div class="band reveal" style="margin-top:clamp(28px,4vw,48px)">
+      <figure><img src="../assets/img/thumbs/plant-brewhouse.jpg" alt="Варочный порядок" loading="lazy"><figcaption>Варочный порядок</figcaption></figure>
+      <figure><img src="../assets/img/thumbs/plant-tank5.jpg" alt="Бродильная ёмкость номер пять" loading="lazy"><figcaption>Бродильня</figcaption></figure>
+      <figure><img src="../assets/img/thumbs/plant-gate-bw.jpg" alt="Ворота завода" loading="lazy"><figcaption>Ворота завода</figcaption></figure>
     </div>
   </div>
 </section>
@@ -115,7 +120,7 @@
   <div class="wrap">
     <div class="chapter-head reveal"><span class="num">Глава IV</span><h2>Бар Alter Brauch</h2></div>
     <div class="bar">
-      <img src="../assets/img/photos/bar1.jpg" alt="Терраса бара Alter Brauch на улице Почтовой">
+      <img src="../assets/img/photos/bar-team.jpg" alt="Бармены Alter Brauch у кранов">
       <div class="reveal">
         <p class="lead">Наш бар в центре Рязани, на пешеходной Почтовой. Всё, что варим, на кранах; на кухне бургеры и закуски к пиву; летом терраса. Для партнёров это шоурум: приходите с командой и пробуйте до заказа.</p>
         <dl>
@@ -123,7 +128,28 @@
           <dt>Часы</dt><dd>вс–чт 12:00–00:00, пт–сб 12:00–02:00</dd>
           <dt>Бронь</dt><dd><a href="tel:+79209675656">+7 920 967‑56‑56</a></dd>
         </dl>
-        <a class="btn" href="bar.html">О баре</a>
+        <a class="btn" href="bar.html">О баре и мерч</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter contract" id="contract">
+  <div class="wrap">
+    <div class="chapter-head reveal"><span class="num">Глава V</span><h2>Контрактные варки и СТМ</h2></div>
+    <div class="grid2">
+      <div class="reveal">
+        <p class="lead">Сварим напиток под вашей маркой: пиво, сидр, медовуху, квас, шорли, лимонад. Наш цех, вода из скважины, технологи, этикетка и фасовка в кеги, ПЭТ или стекло. Для баров, сетей, магазинов и брендов, которым нужен свой продукт без своего завода.</p>
+        <ul class="checks">
+          <li>Пробная варка и согласование вкуса до партии</li>
+          <li>Ваша этикетка или разработка дизайна вместе с нами</li>
+          <li>Документы на продукт: декларации, сведения для ЕГАИС</li>
+        </ul>
+        <p><a class="btn fill" href="contract.html">Как это устроено</a> <a class="btn" href="contract.html#form">Обсудить варку</a></p>
+      </div>
+      <div class="band two reveal">
+        <figure><img src="../assets/img/thumbs/plant-labeling.jpg" alt="Этикетировочная линия" loading="lazy"><figcaption>Этикетировка</figcaption></figure>
+        <figure><img src="../assets/img/thumbs/plant-crates.jpg" alt="Ящики с бутылками на складе" loading="lazy"><figcaption>Готовая партия</figcaption></figure>
       </div>
     </div>
   </div>
@@ -131,10 +157,10 @@
 
 <section class="chapter partners" id="partners">
   <div class="wrap">
-    <div class="chapter-head reveal"><span class="num">Глава V</span><h2>Партнёрам</h2></div>
+    <div class="chapter-head reveal"><span class="num">Глава VI</span><h2>Партнёрам</h2></div>
     <div class="contact">
       <div class="reveal">
-        <p class="lead">Поставляем в бары, рестораны и магазины разливного пива, работаем с сетями и дистрибьюторами. Кеги 20 и 30 л, ПЭТ, стекло. Крупным клиентам отсрочка платежа. Сварим под вашу марку.</p>
+        <p class="lead">Поставляем в бары, рестораны и магазины разливного пива, работаем с сетями и дистрибьюторами. Кеги 20 и 30 л, ПЭТ, стекло. Крупным клиентам отсрочка платежа.</p>
         <ul class="checks">
           <li>Прайс присылаем в WhatsApp или на почту в течение рабочего дня</li>
           <li>Образцы для дегустации по договорённости, вся линейка на кранах в баре</li>

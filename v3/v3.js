@@ -41,12 +41,71 @@
     gulyaka:   { bg: '#c4622f', ink: '#fbf3e6', note: 'Пэйл-эль с травянистыми и фруктовыми нотами. На этикетке портрет рязанского поэта.' },
     stout:     { bg: '#221e1b', ink: '#efe9df', note: 'Сухой ирландский стаут: кофе и шоколад, плотная пена, никакой сладости.' },
     cider:     { bg: '#d7c093', ink: '#2a2413', note: 'Сок прямого отжима из яблок с рязанской земли, без сахара и концентратов. Сухой.' },
-    mead:      { bg: '#dfa63d', ink: '#2a1e0a', note: 'Полусухая, на цветочном мёде своей пасеки. Начинается с запаха яблока с мёдом.' }
+    mead:      { bg: '#dfa63d', ink: '#2a1e0a', note: 'Полусухая, на цветочном мёде рязанских пасек. Начинается с запаха яблока с мёдом.' },
+    schorle:   { bg: '#cfe0d6', ink: '#15201a', note: 'Минеральная вода с натуральным соком, без алкоголя. На кране в баре, для партнёров под заказ.' },
+    kvas:      { bg: '#8a5a34', ink: '#fbf3e6', note: 'Традиционный квас брожения. Готовим к выпуску, под вашей маркой сварим уже сейчас.' },
+    sbiten:    { bg: '#b8733a', ink: '#fbf3e6', note: 'Мёд и пряности, горячий зимой и холодный летом. Готовим к выпуску.' }
   };
   var roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+  // виды для карусели на главной
+  var kinds = {
+    beer:      { title: 'Пиво и пивные напитки', cats: ['beer'] },
+    cidermead: { title: 'Сидры и миды', cats: ['cider', 'mead'] },
+    soft:      { title: 'Безалкогольные напитки', cats: ['schorle', 'national'] }
+  };
   var host = document.getElementById('spreads');
+  var car = document.getElementById('carousel');
+  var data = (host || car) ? fetch('../data/products.json').then(function (r) { return r.json(); }) : null;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function fmt(n) { return String(n).replace('.', ','); }
+
+  if (car) {
+    data.then(function (j) {
+      var cats = {}; j.categories.forEach(function (c) { cats[c.id] = c; });
+      var track = car.querySelector('.track');
+      function card(p, i) {
+        var c = palette[p.id] || { bg: '#dde3d9', ink: '#151b17', note: p.description };
+        var meta = [];
+        if (p.abv) meta.push(fmt(p.abv) + ' %'); else if (p.abv === 0) meta.push('без алкоголя');
+        if (p.ibu) meta.push('IBU ' + p.ibu);
+        var tag = p.soon ? '<span class="tag">Скоро</span>' : (p.on_request ? '<span class="tag">Под заказ</span>' : '');
+        var pic = p.image
+          ? '<img loading="lazy" src="../assets/img/products/' + p.image + '" alt="' + esc(p.title) + '">'
+          : '<div class="noimg" aria-hidden="true"><span>' + esc(p.name.charAt(0)) + '</span></div>';
+        var href = p.image ? 'products.html#p-' + p.id : (p.soon || p.on_request ? 'contract.html' : 'products.html');
+        return '<a class="card" href="' + href + '" style="--s-bg:' + c.bg + ';--s-ink:' + c.ink + '" data-n="' + roman[i] + '">' +
+          '<div class="pic">' + pic + '</div>' +
+          '<div class="body"><div class="kind">' + esc(cats[p.category].title) + tag + '</div><h3>' + esc(p.name) + '</h3>' +
+          '<div class="style">' + esc(p.style) + '</div><p>' + esc(c.note) + '</p>' +
+          (meta.length ? '<div class="meta">' + meta.join(' · ') + '</div>' : '') + '</div></a>';
+      }
+      function show(kind) {
+        var list = j.products.filter(function (p) { return kinds[kind].cats.indexOf(p.category) >= 0; });
+        track.innerHTML = list.map(card).join('');
+        track.scrollTo({ left: 0 });
+        car.setAttribute('data-kind', kind);
+        document.querySelectorAll('.kind-tab').forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-kind') === kind ? 'true' : 'false'); });
+        update();
+      }
+      function update() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        car.querySelector('.prev').disabled = track.scrollLeft <= 2;
+        car.querySelector('.next').disabled = track.scrollLeft >= max;
+      }
+      function step() { var c = track.querySelector('.card'); return c ? c.getBoundingClientRect().width + 16 : 320; }
+      car.querySelector('.prev').addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }); });
+      car.querySelector('.next').addEventListener('click', function () { track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      document.querySelectorAll('.kind-tab').forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-kind')); }); });
+      var start = (location.hash || '').replace('#kind-', '');
+      show(kinds[start] ? start : 'beer');
+    });
+  }
+
   if (host) {
-    fetch('../data/products.json').then(function (r) { return r.json(); }).then(function (j) {
+    data.then(function (j) {
       var cats = {}; j.categories.forEach(function (c) { cats[c.id] = c; });
       var list = j.products.filter(function (p) { return p.image && palette[p.id]; });
       var limit = parseInt(host.getAttribute('data-limit') || '0', 10); if (limit) list = list.slice(0, limit);
