@@ -36,7 +36,7 @@ site/                    прототип нового сайта (статик�
   bar.html               бар Alter Brauch: краны, кухня, события
   contacts.html          контакты и форма
   v2/                    версия 2: одностраничник (index.html, v2.css, v2.js), карусель, бегущая фотолента
-  v3/                    версия 3 (основная): src/pages/*.html + src/{head,header,footer}.html -> build.py -> index, products, partners, where, plant, bar, contacts
+  v3/                    версия 3 (основная): src/pages/*.html + src/{head,header,footer}.html -> build.py -> index, products, partners, contract, where, plant, bar, contacts
   assets/docs/           презентация 2025 без слайда с ценами (для скачивания партнёрами)
   assets/img/thumbs/     уменьшенные фото для мозаики и ленты v2
   data/products.json     данные каталога (правятся без вёрстки)
@@ -83,7 +83,9 @@ python3 -m http.server 8765 # http://localhost:8765
 
 **Версия 1 (многостраничная, по презентации):** https://eromanovvv.github.io/staryzavod-site/
 **Версия 2 (одностраничная, фото и анимация, по референсам Base Camp / Stone Brewing / Riesling Boyz):** https://eromanovvv.github.io/staryzavod-site/v2/
-**Версия 3, основная («Мещёрская сторона»: семь страниц, палитра из места, Old Standard TT + Golos Text, развороты напитков в цвете этикеток, форма в WhatsApp):** https://eromanovvv.github.io/staryzavod-site/v3/
+**Версия 3, основная («Мещёрская сторона»: восемь страниц, палитра из места, Old Standard TT + Golos Text, карусель напитков по трём видам в цвете этикеток, страница контрактных варок и СТМ, мерч бара, форма в WhatsApp):** https://eromanovvv.github.io/staryzavod-site/v3/
+
+Правки Васи от 8 октября 2026 внесены в v3: обложка без людей, без «спиртовой» и «листайте», «Продукция» в шапке, карусель по видам (пиво / сидры и миды / безалкогольные), подписи «сидры из яблок садов Рязанской области», «мёд с рязанских пасек», ч/б фото завода обрезано без подписей и белой полосы, фото бара заменено, раздел «Мерч» (фото с сайта бара до съёмки Алексея), страница `contract.html`. Новые фото завода лежат в `site/assets/img/photos/plant-*.jpg`.
 
 Переключатель версий — в левом нижнем углу обеих. Обе собираются из одной папки `site/` и одних данных `site/data/products.json`; v2 лежит в `site/v2/` (index.html, v2.css, v2.js) и не использует build.py. GitHub Pages из ветки `gh-pages`.
 
