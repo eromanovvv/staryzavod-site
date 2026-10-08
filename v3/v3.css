@@ -99,7 +99,8 @@ p{margin:0 0 1em}
 @media (max-width:860px){.place{grid-template-columns:1fr}}
 
 /* chapter II: пиво — развороты */
-.spread{padding:clamp(48px,7vw,96px) 0;color:var(--s-ink,var(--ink));background:var(--s-bg,var(--fog));transition:background .5s}
+.spread{padding:clamp(48px,7vw,96px) 0;color:var(--s-ink,var(--ink));background:var(--s-bg,var(--fog));transition:background .5s;scroll-margin-top:80px}
+.chapter,.page-head,section[id]{scroll-margin-top:80px}
 .spread .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:center}
 .spread .bottle{position:relative;height:clamp(380px,52vw,620px);display:flex;align-items:flex-end;justify-content:center}
 .spread .bottle img{height:100%;width:auto;position:relative;z-index:1;transform:translateY(30px) rotate(-1.5deg);opacity:0;transition:transform 1s cubic-bezier(.2,.7,.2,1),opacity .8s}
