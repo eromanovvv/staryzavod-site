@@ -58,6 +58,16 @@
   var data = (host || car) ? fetch('../data/products.json').then(function (r) { return r.json(); }) : null;
 
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  // якорь из адреса ведёт на элемент, которого в момент загрузки ещё нет (развороты рисуются после fetch):
+  // после отрисовки прокручиваем сами, с поправкой на липкую шапку
+  function jumpToHash() {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var top = el.getBoundingClientRect().top + window.scrollY - (hdr ? hdr.offsetHeight : 0);
+    window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+  }
   function fmt(n) { return String(n).replace('.', ','); }
 
   if (car) {
@@ -128,6 +138,8 @@
           '</div></div></section>';
       }).join('');
       host.querySelectorAll('.spread').forEach(watch);
+      jumpToHash();
+      window.addEventListener('hashchange', jumpToHash);
     });
   }
 
